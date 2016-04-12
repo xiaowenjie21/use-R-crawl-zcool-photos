@@ -11,7 +11,7 @@ getPages<-function(){
   max_url<-100
   
   add_url<-str_c('http://www.zcool.com.cn/works/33!0!!0!0!200!1!',seq(1,max_url,1),'!!!')
-  urls_list<-as.list(add_url)
+  urls_list<-unlist(as.list(add_url))
   return(urls_list)
 }
 #定义全局变量，获取数据
@@ -30,7 +30,7 @@ for(i in getPages()){
 }
   zcool_image_list[1]<-NULL
   zcool_image_title[1]<-NULL
-  
+  #if you want to create a dataframe,add a for
   #zcool_df<-data.frame(zcool_image_list,zcool_image_title)
   #names(zcool_df)<-c('image_list','image_title')
   #return(zcool_df$image_list)
